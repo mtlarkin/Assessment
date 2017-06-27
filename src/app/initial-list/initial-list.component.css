@@ -1,11 +1,9 @@
-table, th, td {
-  border: 1px solid black
-
-}
-/*tr, table {
-  width: 90vw;
+.question-number, .question-topic, th {
+  text-align: center;
 }
 
-table {
-  height: 90vh;
-}*/
+
+.table > tbody > tr> td, th {
+  vertical-align: middle;
+  text-align: center;
+}

@@ -1,22 +1,29 @@
 <h1>All Questions in the Initial Assessment</h1>
+<div class="container-fluid">
 
-<table>
-  <tr>
-    <th>Question Number</th>
-    <th>Topic</th>
-    <th>Question</th>
-    <th>Correct</th>
-    <th>Wrong #1</th>
-    <th>Wrong #2</th>
-    <th>Wrong #3</th>
-  </tr>
-  <tr *ngFor="let question of initialQuestionList | async">
-    <td><b>{{question.question_number}}</b></td>
-    <td>{{question.topic}}</td>
-    <td>{{question.question}}</td>
-    <td>{{question.correct}}</td>
-    <td>{{question.wrong_1}}</td>
-    <td>{{question.wrong_2}}</td>
-    <td>{{question.wrong_3}}</td>
-  </tr>
+<table class="table table-responsive table-inverse table-striped table-bordered table-hover table-sm">
+  <thead class="thead">
+    <tr>
+      <th>Question #</th>
+      <th>Topic</th>
+      <th>Question</th>
+      <th>Correct</th>
+      <th>Wrong #1</th>
+      <th>Wrong #2</th>
+      <th>Wrong #3</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let question of initialQuestionList | async">
+      <td class="question-number" scope="row"><b>{{question.question_number}}</b></td>
+      <td class="question-topic">{{question.topic}}</td>
+      <td>{{question.question}}</td>
+      <td>{{question.correct}}</td>
+      <td>{{question.wrong_1}}</td>
+      <td>{{question.wrong_2}}</td>
+      <td>{{question.wrong_3}}</td>
+    </tr>
+  </tbody>
 </table>
+</div>
