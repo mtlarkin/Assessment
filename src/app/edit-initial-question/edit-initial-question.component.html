@@ -1,7 +1,7 @@
 <div class="card">
 <div class="card-block">
 
-<h4 class="card-title card-header justify-content-md-center">New Initial Assessment Question</h4>
+<h4 class="card-title card-header justify-content-md-center">Edit Initial Assessment Question</h4>
 <form class="form card-body" >
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="number">Question #</label>
@@ -12,7 +12,7 @@
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="topic">Topic</label>
     <div class="col-sm-8">
-      <input #topic id="topic"type="text" name="" value="" class="form-control" placeholder="ex. jQuery">
+      <input #topic id="topic"type="text" name="" value="{{questionToDisplay.topic}}" class="form-control" placeholder="ex. jQuery">
     </div>
   </div>
   <div class="form-group row justify-content-md-center">
@@ -49,8 +49,8 @@
   </fieldset>
   <div class="form-group row align-items-md-space-between justify-content-md-center">
 
-    <button (click)="clearInputs()" type="button" name="clear-button" class="btn btn-outline-danger col-md-2">Clear</button>
-    <button (click)="saveQuestion(number.value, topic.value, question.value, correct.value, wrong1.value, wrong2.value, wrong3.value); number.value=''; topic.value=''; question.value=''; correct.value=''; wrong1.value=''; wrong2.value=''; wrong3.value='I don\'t know'" type="button" name="save-button" class="btn btn-outline-primary col-md-2">Save</button>
+    <button (click)="cancelEditing()" type="button" name="clear-button" class="btn btn-outline-danger col-md-2">Clear</button>
+    <button (click)="saveChangesToQuestion()" type="button" name="save-button" class="btn btn-outline-primary col-md-2">Save</button>
 </div>
 </form>
 </div>

@@ -10,6 +10,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { routing } from './app.routing';
 import { InitialListComponent } from './initial-list/initial-list.component';
 import { InitialCreateComponent } from './initial-create/initial-create.component';
+import { EditInitialQuestionComponent } from './edit-initial-question/edit-initial-question.component';
 
 export var firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -24,7 +25,8 @@ export var firebaseConfig = {
     AppComponent,
     HomeComponent,
     InitialListComponent,
-    InitialCreateComponent
+    InitialCreateComponent,
+    EditInitialQuestionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,9 @@
+<div class="overlay" *ngIf="questionToEdit" >
+
+<edit-initial  [questionToDisplay]="questionToEdit" (keepOrDiscard)="saveOrCancel($event)"></edit-initial>
+</div>
+<div [ngClass]="{blurred: blurBg}">
+
 <h1>All Questions in the Initial Assessment</h1>
 <div class="container-fluid">
 
@@ -11,6 +17,7 @@
       <th>Wrong #1</th>
       <th>Wrong #2</th>
       <th>Wrong #3</th>
+      <th>Options</th>
     </tr>
   </thead>
   <tbody>
@@ -23,7 +30,9 @@
       <td>{{question.wrong_1}}</td>
       <td>{{question.wrong_2}}</td>
       <td>{{question.wrong_3}}</td>
+      <td><button type="button" name="button" class="btn btn-outline-default" (click)="selectedQuestion(question)">Edit</button></td>
     </tr>
   </tbody>
 </table>
+</div>
 </div>
