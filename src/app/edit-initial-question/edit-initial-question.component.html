@@ -12,45 +12,45 @@
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="topic">Topic</label>
     <div class="col-sm-8">
-      <input #topic id="topic"type="text" name="" value="{{questionToDisplay.topic}}" class="form-control" placeholder="ex. jQuery">
+      <input [(ngModel)]="questionToDisplay.topic" name="topic" class="form-control" placeholder="ex. jQuery">
     </div>
   </div>
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="question">Question</label>
     <div class="col-sm-8">
-      <textarea rows="3" #question id="question"type="text" name="" value="" class="form-control" placeholder="ex. What is jQuery?	"></textarea>
+      <textarea rows="3" [(ngModel)]="questionToDisplay.question"  name="question" class="form-control" placeholder="ex. What is jQuery?	"></textarea>
     </div>
   </div>
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="correct">Correct Answer</label>
     <div class="col-sm-8">
-      <textarea rows="3" #correct id="correct"type="text" name="" value="" class="form-control" placeholder="ex. A JavaScript library	"></textarea>
+      <textarea rows="3" [(ngModel)]="questionToDisplay.correct" name="correct" class="form-control" placeholder="ex. A JavaScript library	"></textarea>
     </div>
   </div>
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="wrong1">Wrong Answer #1</label>
     <div class="col-sm-8">
-      <textarea rows="3" #wrong1 id="wrong1"type="text" name="" value="" class="form-control" placeholder="ex. A JavaScript framework"></textarea>
+      <textarea rows="3" [(ngModel)]="questionToDisplay.wrong_1" name="wrong-1" class="form-control" placeholder="ex. A JavaScript framework"></textarea>
     </div>
   </div>
   <div class="form-group row justify-content-md-center">
     <label class="col-sm-2 col-form-label" for="wrong2">Wrong Answer #2</label>
     <div class="col-sm-8">
-      <textarea rows="3" #wrong2 id="wrong2"type="text" name="" value="" class="form-control" placeholder="ex. A Stylesheet to quickly produce beautiful websites	"></textarea>
+      <textarea rows="3" [(ngModel)]="questionToDisplay.wrong_2" name="wrong-2" class="form-control" placeholder="ex. A Stylesheet to quickly produce beautiful websites	"></textarea>
     </div>
   </div>
   <fieldset disabled>
     <div class="form-group row justify-content-md-center">
       <label class="col-sm-2 col-form-label" for="wrong3">Wrong Answer #3</label>
       <div class="col-sm-8">
-        <input #wrong3 id="wrong3"type="text" name="" value="I don't know" class="form-control">
+        <input #wrong3 [(ngModel)]="questionToDisplay.wrong_3" name="wrong-3" class="form-control">
       </div>
     </div>
   </fieldset>
   <div class="form-group row align-items-md-space-between justify-content-md-center">
 
-    <button (click)="cancelEditing()" type="button" name="clear-button" class="btn btn-outline-danger col-md-2">Clear</button>
-    <button (click)="saveChangesToQuestion()" type="button" name="save-button" class="btn btn-outline-primary col-md-2">Save</button>
+    <button (click)="cancelEditing()" type="button" name="clear-button" class="btn btn-outline-danger col-md-2"><span class="fa fa-times fa-lg"></span></button>
+    <button (click)="saveChangesToQuestion(questionToDisplay)" type="button" name="save-button" class="btn btn-outline-primary col-md-2"><span class="fa fa-save fa-lg"></span></button>
 </div>
 </form>
 </div>

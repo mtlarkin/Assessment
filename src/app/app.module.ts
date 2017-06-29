@@ -11,6 +11,7 @@ import { routing } from './app.routing';
 import { InitialListComponent } from './initial-list/initial-list.component';
 import { InitialCreateComponent } from './initial-create/initial-create.component';
 import { EditInitialQuestionComponent } from './edit-initial-question/edit-initial-question.component';
+import { QuizViewComponent } from './quiz-view/quiz-view.component';
 
 export var firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -26,7 +27,8 @@ export var firebaseConfig = {
     HomeComponent,
     InitialListComponent,
     InitialCreateComponent,
-    EditInitialQuestionComponent
+    EditInitialQuestionComponent,
+    QuizViewComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { InitialQuestion } from '../models/initial-question.model';
 import { InitialQuestionsService } from '../initial-questions.service';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'edit-initial',
@@ -15,9 +16,14 @@ export class EditInitialQuestionComponent implements OnInit {
   constructor(private initialQuestionsService: InitialQuestionsService) { }
 
   ngOnInit() {
+
+      console.log(this.questionToDisplay);
+
+
   }
 
-  saveChangesToQuestion() {
+  saveChangesToQuestion(questionToDisplay) {
+    this.initialQuestionsService.updateInitialQuestion(questionToDisplay);
     this.keepOrDiscard.emit(true);
   }
 

@@ -17,4 +17,31 @@ export class InitialQuestionsService {
   saveInitialQuestionToFirebase(question: InitialQuestion) {
     this.initialQuestionList.push(question);
   }
+
+  getInitialQuestionById(questionId: string) {
+    return this.database.object('initial-questions/' + questionId);
+  }
+
+  updateInitialQuestion(updatedQuestion){
+    var initialQuestionInFirebase = this.getInitialQuestionById(updatedQuestion.$key);
+    initialQuestionInFirebase.update(
+      {
+        question_number: updatedQuestion.question_number,
+        topic: updatedQuestion.topic,
+        question: updatedQuestion.question,
+        correct: updatedQuestion.correct,
+        wrong_1: updatedQuestion.wrong_1,
+        wrong_2: updatedQuestion.wrong_2,
+        wrong_3: updatedQuestion.wrong_3,
+
+      });
+  }
+
+  deleteInitialQuestion(questionId: string) {
+    console.log(questionId);
+    console.log("we're in");
+    var questionToDelete = this.getInitialQuestionById(questionId);
+    console.log(questionToDelete);
+    questionToDelete.remove();
+  }
 }

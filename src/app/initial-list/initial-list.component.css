@@ -28,3 +28,14 @@
   filter: blur(2px);
   overflow-y: hidden;
 }
+
+
+
+
+h4 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+button {
+  margin: 5px;
+}

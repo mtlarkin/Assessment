@@ -49,8 +49,8 @@
   </fieldset>
   <div class="form-group row align-items-md-space-between justify-content-md-center">
 
-    <button (click)="clearInputs()" type="button" name="clear-button" class="btn btn-outline-danger col-md-2">Clear</button>
-    <button (click)="saveQuestion(number.value, topic.value, question.value, correct.value, wrong1.value, wrong2.value, wrong3.value); number.value=''; topic.value=''; question.value=''; correct.value=''; wrong1.value=''; wrong2.value=''; wrong3.value='I don\'t know'" type="button" name="save-button" class="btn btn-outline-primary col-md-2">Save</button>
+    <button (click)="cancelNew()" type="button" name="clear-button" class="btn btn-outline-danger col-md-2"><span class="fa fa-times fa-lg"></span></button>
+    <button (click)="saveQuestion(number.value, topic.value, question.value, correct.value, wrong1.value, wrong2.value, wrong3.value); number.value=''; topic.value=''; question.value=''; correct.value=''; wrong1.value=''; wrong2.value=''; wrong3.value='I don\'t know'" type="button" name="save-button" class="btn btn-outline-primary col-md-2"><span class="fa fa-save fa-lg"></span></button>
 </div>
 </form>
 </div>
