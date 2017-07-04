@@ -3,7 +3,7 @@
 <edit-initial  [questionToDisplay]="questionToEdit" (keepOrDiscard)="saveOrCancel($event)"></edit-initial>
 </div>
 <div *ngIf="!newQuestion">
-<button (click)="newQuestion = true" class="btn btn-outline-success"><span class="fa fa-plus fa-lg"></span></button>
+<button (click)="newQuestion = true; blurBg = true;" class="btn btn-outline-success"><span class="fa fa-plus fa-lg"></span></button>
 </div>
 <div class="overlay" *ngIf="newQuestion">
   <new-initial (keepOrDiscard)="saveOrCancel($event)"></new-initial>

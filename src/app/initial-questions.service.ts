@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { InitialQuestion } from './models/initial-question.model';
+import { Question } from './models/question.model';
 
 @Injectable()
 export class InitialQuestionsService {
   initialQuestionList: FirebaseListObservable<any[]>;
+  quizQuestionList;
+  answerArray = [];
 
   constructor(private database: AngularFireDatabase) {
     this.initialQuestionList = database.list('initial-questions');
@@ -35,13 +38,27 @@ export class InitialQuestionsService {
         wrong_3: updatedQuestion.wrong_3,
 
       });
-  }
+    }
+    makeAnswerArray(emptyArray) {
+      this.initialQuestionList.subscribe(questions =>  {
 
-  deleteInitialQuestion(questionId: string) {
-    console.log(questionId);
-    console.log("we're in");
-    var questionToDelete = this.getInitialQuestionById(questionId);
-    console.log(questionToDelete);
-    questionToDelete.remove();
+        this.quizQuestionList = questions;
+
+        for(var i=0; i<this.quizQuestionList.length; i++) {
+          var id = this.quizQuestionList[i].$key;
+          var tempQuestion:Question =  new Question(id, undefined, undefined);
+          emptyArray.push(tempQuestion);
+        }
+
+          return emptyArray;
+      });
+    }
+
+    deleteInitialQuestion(questionId: string) {
+      console.log(questionId);
+      console.log("we're in");
+      var questionToDelete = this.getInitialQuestionById(questionId);
+      console.log(questionToDelete);
+      questionToDelete.remove();
+    }
   }
-}

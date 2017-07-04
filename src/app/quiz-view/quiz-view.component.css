@@ -1,0 +1,19 @@
+.hover:hover {
+background-color: rgba(200,200,200,.5);
+}
+
+.hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  height: 3em;
+
+}
+
+p {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}

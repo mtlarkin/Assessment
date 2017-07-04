@@ -1,3 +1,25 @@
-<p>
-  quiz-view works!
-</p>
+<div class="" (click)="startQuiz()" *ngIf="!start">
+<h1>Start the quiz</h1>
+</div>
+<div class="background" *ngIf="start">
+  <div class="card card-block">
+
+    <div class="card-header text-center">
+<h1 (click)="startQuiz()">{{currentQuestion.question}}</h1>
+    </div>
+    <div class="card card-default text-center hover">
+      <p id="1" (click)="setAnswer($event)">{{currentQuestion.correct}}</p>
+    </div>
+    <div class="card card-default text-center hover">
+      <p id="2" (click)="setAnswer($event)">{{currentQuestion.wrong_1}}</p>
+    </div>
+    <div class="card card-default text-center hover">
+      <p id="3" (click)="setAnswer($event)">{{currentQuestion.wrong_2}}</p>
+    </div>
+    <div class="card card-footer text-center hover">
+      <p id="4" (click)="setAnswer($event)">{{currentQuestion.wrong_3}}</p>
+    </div>
+
+  </div>
+
+</div>
