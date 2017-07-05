@@ -3,6 +3,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 import { InitialQuestion } from './models/initial-question.model';
 import { Question } from './models/question.model';
 
+
 @Injectable()
 export class InitialQuestionsService {
   initialQuestionList: FirebaseListObservable<any[]>;

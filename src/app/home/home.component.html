@@ -1,17 +1,14 @@
-<h1>Welcome Home!</h1>
-<ul>
+<h1>Welcome to the assessment!</h1>
+<div *ngIf=!user>
 
-<li>
-  <a href="#">Log In</a>
-</li>
-<li>
-  <a routerLink='initial-list'>Initial Assessment Questions</a>
-</li>
-<li>
-  <a routerLink='quiz'>Quiz</a>
-</li>
-<li>
-  <a routerLink='new-initial'>New Initial Assessment Question</a>
-</li>
+<input type="text" name="email" placeholder="Example@email.com" [(ngModel)]="email">
+<input type="password" name="password" placeholder="Password" [(ngModel)]="password">
+<input type="text" name="firstName" placeholder="First name" [(ngModel)]="firstName">
+<input type="text" name="lastName" placeholder="Last name" [(ngModel)]="lastName">
 
-</ul>
+<button type="button" name="button" (click)="createAccount(email, password, firstName, lastName
+)">create account</button>
+</div>
+<div *ngIf="user">
+Hello {{(user | async)?.email}}!
+</div>
