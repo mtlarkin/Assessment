@@ -1,14 +1,29 @@
 <h1>Welcome to the assessment!</h1>
-<div *ngIf=!user>
+<div
+id="main-div" class="text-center container-fluid">
+  <div class="form-group" *ngIf=!authUser>
 
-<input type="text" name="email" placeholder="Example@email.com" [(ngModel)]="email">
-<input type="password" name="password" placeholder="Password" [(ngModel)]="password">
-<input type="text" name="firstName" placeholder="First name" [(ngModel)]="firstName">
-<input type="text" name="lastName" placeholder="Last name" [(ngModel)]="lastName">
+    <input class="form-control" type="email" name="email" placeholder="Example@email.com" [(ngModel)]="email">
+    <input class="form-control" type="password" name="password" placeholder="Password" [(ngModel)]="password">
+    <div class="" *ngIf="createNewAccount">
+      <input class="form-control" type="password" name="confirm-password" placeholder="Confirm Password" [(ngModel)]="passwordConfirm">
+      <small class="text text-muted" *ngIf="passwordNotConfirmed">Passwords must match.</small>
+      <input class="form-control" type="text" name="firstName" placeholder="First name" [(ngModel)]="firstName">
+      <input class="form-control" type="text" name="lastName" placeholder="Last name" [(ngModel)]="lastName">
+      <button class="btn but-success" type="button" name="button" (click)="createAccount(email, password, firstName, lastName, passwordConfirm); password = ''; passwordConfirm = ''; ">create account</button>
+      <button class="btn btn-primary" (click)="toggleNewAccountInputs(0)">Sign in</button>
+    </div>
+    <div *ngIf="!createNewAccount">
 
-<button type="button" name="button" (click)="createAccount(email, password, firstName, lastName
-)">create account</button>
-</div>
-<div *ngIf="user">
-Hello {{(user | async)?.email}}!
+      <button class="btn btn-primary" (click)="toggleNewAccountInputs(1)">Create Account</button>
+      <button class="btn btn-default" (click)="signIn(email, password)">Login</button>
+    </div>
+  </div>
+  <div class="alert alert-success" *ngIf="authUser">
+    Hello, {{(authUser | async)?.email}}!
+  </div>
+  <div (click)="getQuizzes()">
+    CLICK ME
+
+  </div>
 </div>

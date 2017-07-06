@@ -18,6 +18,7 @@ export class QuizViewComponent implements OnInit {
   start = false;
   answerIndex = 0;
   fourAnswerChoices = [];
+  
 
   constructor(public initialQuestionsService: InitialQuestionsService) { }
   ngOnInit() {
